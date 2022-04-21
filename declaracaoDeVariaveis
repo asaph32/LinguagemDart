@@ -1,0 +1,47 @@
+import 'dart:io';
+
+void main() {
+  int idade = 33;
+  print("idade : $idade");
+
+  double pi = 3.14;
+  print("Numero PI : $pi");
+
+  String nome = "Asaph";
+  print("Nome : $nome");
+
+  bool ligado = true;
+  print("Ligado ? : $ligado");
+
+  List NumerosEletrasGenericos = [1, 2, 3, 'X'];
+  print("numeros genericos : $NumerosEletrasGenericos");
+
+  List<int> numerosInteiros = [10, 20, 30, 40];
+  print('Numeros Inteiros : $numerosInteiros');
+
+  Map<String, String> nome_sobrenome = {'Asaph': 'Pemberton'};
+  print("Nome Completo : $nome_sobrenome");
+  var sobrenome = nome_sobrenome[nome];
+  print('$nome $sobrenome');
+
+  const double PI = 3.14;
+  print('$PI');
+
+  dynamic x = 'asaph';
+  print('$x');
+
+  print("Qual o seu nome ? :");
+  String? nome_usuario = stdin.readLineSync()!;
+  print("Nome : $nome_usuario");
+
+  print("Qual a sua idade ? :");
+  int? idade_ususario = int.parse(stdin.readLineSync()!);
+  print("Idade : $idade_ususario");
+
+  print("Qual a sua altura ? : ");
+  double? altura = double.parse(stdin.readLineSync()!);
+  print("Altura : $altura");
+
+  bool esta_logado = true;
+  print("Esta logado ? : $esta_logado");
+}
