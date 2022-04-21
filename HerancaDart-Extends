@@ -1,0 +1,83 @@
+import 'dart:io';
+
+void main() {
+  Cachorro cachorro = Cachorro("Asaph", 20);
+  cachorro.comer();
+  cachorro.dormir();
+  cachorro.latir();
+  cachorro.morrer();
+  print(cachorro.toString());
+
+  Gato gato = Gato("Marina", 28);
+  gato.comer();
+  gato.dormir();
+  gato.miar();
+  gato.morrer();
+  print(gato.toString());
+}
+
+abstract class Animal {
+  Animal(this.nome, this.idade);
+  String? nome;
+  int? idade;
+
+  void comer() {
+    print("Comeu");
+  }
+
+  void dormir() {
+    print("dormiu");
+  }
+
+  void morrer();
+
+  @override
+  String toString() {
+    return 'Nome : $nome , Idade : $idade';
+  }
+}
+
+class Cachorro extends Animal {
+  Cachorro(String nome, int idade) : super(nome, idade);
+  void latir() {
+    print("Au au au");
+  }
+
+  @override
+  String toString() {
+    return 'Cachorro -> Nome : $nome , Idade : $idade';
+  }
+
+  void morrer() {
+    print("S A D :(");
+  }
+
+  @override
+  void dormir() {
+    super.dormir();
+    print("Dormiu roncando muito");
+  }
+}
+
+class Gato extends Animal {
+  Gato(String nome, int idade) : super(nome, idade);
+
+  void miar() {
+    print("Miaaaaau");
+  }
+
+  void morrer() {
+    print(" E M O R R E U");
+  }
+
+  @override
+  void dormir() {
+    super.dormir();
+    print("Gatinho dormindo");
+  }
+
+  @override
+  String toString() {
+    return 'Gato -> Nome : $nome , Idade : $idade';
+  }
+}
