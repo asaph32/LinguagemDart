@@ -1,0 +1,20 @@
+import 'dart:io';
+
+void main() {
+  var IMC = imc();
+  IMC.calculo();
+}
+
+class imc  {
+  void calculo() {
+    print("Qual o seu nome ? : ");
+    String? nome = stdin.readLineSync();
+    print("Quanto voce pesa (Kg) ? : ");
+    double? peso = double.parse(stdin.readLineSync()!);
+    print("Qual a sua altura (M) ? : ");
+    double? altura = double.parse(stdin.readLineSync()!);
+    double imc = peso / (altura * altura);
+    print("Nome : $nome , Peso : $peso Kg Altura : $altura m ");
+    print("IMC : $imc");
+  }
+}
