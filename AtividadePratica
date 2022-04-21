@@ -1,0 +1,41 @@
+import 'dart:io';
+
+void main(List<String> args) {
+  Zoologico zoologico = Zoologico();
+  zoologico.gritaria();
+  zoologico.passeio();
+
+  
+}
+
+class Zoologico {
+  void adicionaAnimal(String Animal) {
+    print("Adicionando Animal");
+  }
+
+  void gritaria() {
+    print("todo mundo gritando");
+  }
+
+  void passeio() {
+    print("Todo mundo passeando");
+  }
+}
+
+abstract class Animal extends Zoologico {
+  void emitirSom() {
+    print("Emitindo Som");
+  }
+
+  void andar() {
+    print("Andando");
+  }
+}
+
+class Leao extends Animal {
+  int? _numeroPatas;
+}
+
+class Ema extends Animal {
+  int? _numeroPatas;
+}
