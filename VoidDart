@@ -1,0 +1,36 @@
+import 'dart:io';
+
+void escreverBemVindo() {
+  String nome = "Asaph";
+  print('Bem vindo $nome');
+}
+
+void CalcularMedia(double nota1, double nota2, String nome, String sobrenome) {
+  double media = (nota1 + nota2) / 2;
+  print("A media do aluno $nome $sobrenome é de : $media");
+}
+
+void CalcularAreaDoCirculo(double raio) {
+  const double pi = 3.14;
+  double area = pi * raio * raio;
+  print("A area do circulo equivale a : $area");
+}
+
+void exibirNomeCursoIdade(String nome, int idade1, String curso) {
+  if (idade1 != null && curso != null) {
+    print("$nome tem $idade1 anos e faz o curso de $curso.");
+  } else if (idade1 == null && curso != null) {
+    print("$nome faz o curso de $curso.");
+  } else if (idade1 != null && curso == null) {
+    print("$nome tem $idade1 anos.");
+  } else {
+    print("Ola $nome");
+  }
+}
+
+void main() {
+  escreverBemVindo();
+  CalcularMedia(10, 10, "Asaph", "Pemberton");
+  CalcularAreaDoCirculo(6);
+  exibirNomeCursoIdade("asaph", 19, "ENSW");
+}
