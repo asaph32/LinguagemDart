@@ -1,0 +1,65 @@
+import 'dart:io';
+
+void main() {
+  print("--------------INFORMAÇOES------------");
+  
+  Leao leao = Leao("Aslan", "carnivoro");
+  leao.Comercarne();
+  leao.info();
+
+  print("--------------------------");
+
+  Jaguar jaguar = Jaguar("Rex", "carnivoro");
+  jaguar.Comercarne();
+  jaguar.info();
+
+  print("--------------------------");
+
+  Carnivoros carnivoros = Carnivoros("XX", "gggg");
+  carnivoros.Comercarne();
+  carnivoros.info();
+}
+
+class Leao {
+  Leao(this.nome, this.especie);
+  String? nome;
+  String? especie;
+  void Comercarne() {
+    print("Comendo Carne");
+  }
+
+  void info() {
+    print("Nome : $nome");
+    print("Especie : $especie");
+  }
+}
+
+class Jaguar {
+  Jaguar(this.nome, this.especie);
+  String? nome;
+  String? especie;
+  void Comercarne() {
+    print("Comendo Avestruz");
+  }
+
+  void info() {
+    print("Nome : $nome");
+    print("Especie : $especie");
+  }
+}
+
+class Carnivoros implements Leao, Jaguar {
+  Carnivoros(this.nome, this.especie);
+  String? nome;
+  String? especie;
+  @override
+  void Comercarne() {
+    print("Carnivoros caçando algo para comer");
+  }
+
+  @override
+  void info() {
+    print("Nome : $nome");
+    print("Especie : $especie");
+  }
+}
